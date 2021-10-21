@@ -2,7 +2,7 @@
 
 <html lang="de">
 <head>
-    <meta charset="utf-8">
+<meta charset="utf-8">
 <title>Blogs</title>
 <meta name="description" content="blogs">
 <link rel="stylesheet" type="text/css" href="mystyle.css">
@@ -16,29 +16,22 @@
     <header>
     <h1>Berlin Clubs Blog</h1>
     <nav id="navBar">
-        <p>nav bar</p>
-        <ol>
-            <li>
-                blog#1
-            </li>
-            <li>
-                blog#2
-            </li>
-            <li>
-                blog#3
-            </li>
-        
-        </ol>
+        <p>Kalle <button type="button">Abmelden</button></p>
+        <ul>
+            <li><a href="">Thema: Betriebsfeier @ Hoppetosse [Posts : 1]</a></li>
+            <li><a href="">Thema: Nicht-Geburtstags im Sisyphos [Posts : 1]</a></li>
+            <li><a href="">Thema: Wilde Renate [Posts : 1]</a></li>
+            <li><a href="">Zur Google Ansicht</a></li>
+        </ul>
     </nav>
-    <aside>
-        aside--------
-       + Create new Post 
-        aside--------
-    </aside>
+    <aside><button type="button">Create new Post</button></aside>
+    <p id="metaPost"><span>Veröffentlich am 19.10.2021</span> | 
+        <span>Editiert am 20.10.2021</span> | 
+        <span>Posts: 3</span></p>
     </header>
     <p></p>
-        <hr>
-
+    <hr>
+    <hr>
         <main>
 
         
@@ -46,14 +39,12 @@
         
 
     <div id="overview" >
-        <article>
-            <h3>Berlin Clubs Blog</h3>
+        <article id="blogOverview" data-action="/overview">
+            <h3>Berlin Club Events</h3>
             <hr>
-            <ol>
-            <li id="blogOverview" data-action="/overview">
-                
-                </li>
-        </ol>
+            
+            
+            
     </div>
 
         </article id ="detailansicht">
@@ -62,18 +53,74 @@
 
     
     <div id="overview">
+        <article id="post">        
+            <h3>Betriebsfeier @ Hoppetosse</h3> <!--aufbau der blogs-->
+                <ul>
+                    <span id="metaPost">
+                        <li>Veröffentlich am: 15.10.2021 </li>
+                        <li>Letzte Änderung: 17.10.2021 </li>
+                        <li>Anzahl der Kommentare: 1 </li>
+                        <li>Autor: XYZ</li>
+                    </span>
+                </ul>
+            <button type="button">Details</button>
+            <button type="button">Edit</button>
+            <button type="button">Delete</button>
+        </article>    
+      <article id="post">        
+            <h3>Nicht-Geburtstag im Sisyphos!!!</h3> <!--aufbau der blogs-->
+                <ul>
+                    <span id="metaPost">
+                        <li>Veröffentlich am: 08.10.2021 </li>
+                        <li>Letzte Änderung: 09.10.2021 </li>
+                        <li>Anzahl der Kommentare: 0 </li>
+                        <li>Autor: XYZ</li>
+                    </span>
+                </ul>
+            <button type="button">Details</button>
+            <button type="button">Edit</button>
+            <button type="button">Delete</button>
+        </article>  
         
-        <p>PostName</p> <!--aufbau der blogs-->
-        <span>Bild</span>
-        <span>comment anzahl</span>
-        <span>created Date/time</span>
-        <p>This document was last modified <span id="time"></span>.</p>
+     
         <hr>
     </div>
     <hr>
     <h3>
-        Blog Detail + Comments
-    </h3>
+        Betriebfeier @ Hoppetosse
+    </h3> 
+        <span id="metaPost">
+            <li>Veröffentlich am: 15.10.2021 </li>
+            <li>Letzte Änderung: 17.10.2021 </li>
+            <li>Anzahl der Kommentare: 3 </li>
+         </span>
+    <hr>
+    <section id="post">
+        
+        <article>
+            <header>
+            </header>
+            <img src="https://i1.sndcdn.com/artworks-000501010518-urkzja-t500x500.jpg" alt="Betriebsfeier" height="200 width="040"/>
+            Samstag den 17.10 findet wieder unsere Betriebsparty statt, seid dabei! feiert rein! lassts krachen!
+            <footer>
+                
+            </footer>
+        </article>
+    </section>
+    <hr>
+    <article id="comment">
+        <article>Kalle Jackson: freu mich, wird wild!!</article>
+        <p id="metaComment">
+            <span>Veröffentlich am 19.10.2021</span> | 
+            <span>20.15</span>
+        </p>
+        <button type="button">Edit</button>
+        <button type="button">Delete</button>
+    </article>
+    <hr>
+    
+    <a href="">Zurück zur Übersicht</a>
+    
     <hr>
     <hr>
     <article>
