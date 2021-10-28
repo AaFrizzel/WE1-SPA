@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Blogs</title>
+<meta name="description" content="blogs">
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="js/model.js"></script>
+<script>
+    document.getElementById("time").innerHTML = document.lastModified;
+</script>
+</head>
+<body>
+    <header>
+    <h1>Blog Page</h1>
+    <h2 id="currentBlog">Berlin Club Events</h2>
+
+    <nav id="navBar">
+        <h3>All Blogs [ NavBar]</h3>
+        <ol>
+            <li><a href=""># Berlin Club Events</a><span>Posts: 4 ]    </span>     <button type="button">view on Google Blogs</button>
+            </li>
+            <li><a href=""># YogaDulli Blog</a><span>Posts: 3 ]    </span>     <button type="button">view on Google Blogs</button>
+            </li>
+            <li><a href=""># Kunst Blog</a><span>Posts: 3 ]</span>     <button type="button">view on Google Blogs</button>
+            </li>
+            <li><a href=""># Global Boulder Sites Blog</a><span>Posts: 3 ]</span>     <button type="button">view on Google Blogs</button>
+            </li>
+            <li><a href=""># VeganCooking Blog</a><span>Posts: 3 ]</span>     <button type="button">view on Google Blogs</button>
+            </li>
+        </ol>
+    </nav>
+    <hr>
+
+    <h3>Rechts Oben</h3>
+    <p><span>Kalle</span> <button type="button">Abmelden</button></p>
+    <button type="button">Create new Post</button>
+    <button type="button">view on Google Blogs</button>
+
+    <hr>
+    <hr>
+    </header>
+    
+        <main id="main-content">
+        </main>
+
+        
+            
+            <h3>Posts</h3>
+                <a href=""><h3>Betriebsfeier @ Hoppetosse</h3></a>
+                    <article id="post">         <!--aufbau der blogs-->
+                        <header id="postOverviewHead">
+                            <p id="metaPost">
+                                <span>published 15.10.2021</span> | 
+                                <span>Last change 15.10.2021</span> | 
+                                <span>2 Comments</span> | 
+                                <span>Author: Kalle</span>
+                            </p>
+                        </header>
+                        <img src="https://i1.sndcdn.com/artworks-000501010518-urkzja-t500x500.jpg" alt="Betriebsfeier" height="200" width="200"/>
+                            <footer>
+                                <nav>
+                                    <button type="button">Details</button>
+                                    <button type="button">Edit</button>
+                                    <button type="button">Delete</button>
+                                </nav>
+                            </footer>         
+                    </article>
+
+              
+                <a href=""><h3>Nicht-Geburtstag im Sisyphos!!!</h3></a>
+                <article id="post">         <!--aufbau der blogs-->
+                    <header id="postOverviewHead">
+                        <p id="metaPost">
+                            <span>published 15.10.2021</span> | 
+                            <span>Last change 15.10.2021</span> | 
+                            <span>2 Comments</span> | 
+                            <span>Author: Kalle</span>
+                        </p>
+                    </header>
+                    <img src="https://i1.sndcdn.com/artworks-000501010518-urkzja-t500x500.jpg" alt="Betriebsfeier" height="200" width="200"/>
+                        <footer>
+                            <nav>
+                                <button type="button">Details</button>
+                                <button type="button">Edit</button>
+                                <button type="button">Delete</button>
+                            </nav>
+                        </footer>         
+                </article>
+
+                <a href=""><h3>BORDELdesARTs @ Wilde Renate</h3></a>
+                <article id="post">         <!--aufbau der blogs-->
+                    <header id="postOverviewHead">
+                        <p id="metaPost">
+                            <span>published 15.10.2021</span> | 
+                            <span>Last change 15.10.2021</span> | 
+                            <span>2 Comments</span> | 
+                            <span>Author: Kalle</span>
+                        </p>
+                    </header>
+                    <img src="https://i1.sndcdn.com/artworks-000501010518-urkzja-t500x500.jpg" alt="Betriebsfeier" height="200" width="200"/>
+                        <footer>
+                            <nav>
+                                <button type="button">Details</button>
+                                <button type="button">Edit</button>
+                                <button type="button">Delete</button>
+                            </nav>
+                        </footer>         
+                </article>
+
+                <a href=""><h3>Techtakel @ Mensch Meier</h3></a>
+                <article id="post">         <!--aufbau der blogs-->
+                    <header id="postOverviewHead">
+                        <p id="metaPost">
+                            <span>published 15.10.2021</span> | 
+                            <span>Last change 15.10.2021</span> | 
+                            <span>2 Comments</span> | 
+                            <span>Author: Kalle</span>
+                        </p>
+                    </header>
+                    <img src="https://i1.sndcdn.com/artworks-000501010518-urkzja-t500x500.jpg" alt="Betriebsfeier" height="200" width="200"/>
+                        <footer>
+                            <nav>
+                                <button type="button">Details</button>
+                                <button type="button">Edit</button>
+                                <button type="button">Delete</button>
+                            </nav>
+                        </footer>         
+                </article>
+        
+    
+        
+        
+<!--
+    <div id="overview" >
+        <article id="blogOverview" data-action="/overview">
+            <hr>       
+    </div>
+</article id ="detailansicht">
+    <div id="overview">
+        <hr>
+    </div>
+    -->
+
+
+    <header>
+        <h1>Blog Page</h1>
+        <h2>Berlin Club Events</h2>
+    
+        <nav id="navBar">
+            <h3>All Blogs [ NavBar]</h3>
+            <ol>
+                <li><a href=""># Berlin Club Events</a><span>Posts: 4 ]</span></li>
+                <li><a href=""># YogaDulli Blog</a><span>Posts: 3 ]</span></li>
+                <li><a href=""># Kunst Blog</a><span>Posts: 3 ]</span></li>
+                <li><a href=""># Global Boulder Sites Blog</a><span>Posts: 3 ]</span></li>
+                <li><a href=""># VeganCooking Blog</a><span>Posts: 3 ]</span></li>
+            </ol>
+        </nav>
+        <hr>
+    
+        <h3>Rechts Oben</h3>
+        <p><span>Kalle</span> <button type="button">Abmelden</button></p>
+        <button type="button">Create new Post</button>
+        <button type="button">view on Google Blogs</button>
+    
+        <hr>
+        <hr>
+        </header>
+
+    <article id="Post">
+        <header id="postDetailHead">
+            <h3 id=postTitle>Betriebfeier @ Hoppetosse</h3> 
+            <nav>
+                <a href="">Back to Overview</a>
+                <button type="button">Delete</button>
+                <button type="button">Edit</button>
+
+            </nav>
+            <p>
+                <span>Last change 17.10.2021</span>  |  
+                <span>Comments 3</span> 
+             </p>           
+        </header>
+        <hr>
+
+        <section>
+            <img src="https://i1.sndcdn.com/artworks-000501010518-urkzja-t500x500.jpg" alt="Betriebsfeier" height="200" width="200"/>
+            <p>Ob du seekrank bist oder nicht, die Hoppetosse bei dem LineUp ist
+                ein Muss! Ick rin da, schmeiß die Lichter an und Schmitzkatzki lotst
+                mich ohne Umwege in den Tunnel des Glücks. Der Laden war wie erwartet
+                "Full", konnt kaum treten, aber wofür hat man denn die Ellenbogen ;).
+                Meine Truppe und ich haben vorne Links bisl platz geschaffen und dann...
+            </p>
+        </section>
+        <footer id="footer">
+            All Blogs are Bastards    
+        </footer>
+    </article>
+    <hr>
+
+    <article id="comment">
+            <header id="commentHead">
+               <span id="comAuth">[ KalleJackson </span><span id="comTime">19.10.2029 ]</span>                
+               <button type="button">Delete</button>     
+            </header>
+
+            <p>freu mich, wird wild!!</p> <!--brauche wir hier noch nen container mit ID ?-->
+        
+            <footer >
+            </footer>
+        </article>
+    <hr>
+    <footer>
+        All Blogs are Bastards
+        <p>This document was last modified <span id="time"></span>.</p>
+
+
+    </footer id="footer">
+    
+    
+    <!--brauchen wir alles doch noch nicht sry xD
+    <hr>
+    <hr>
+    
+    <section id="create"> 
+        <h3>Add new Post</h3>  
+        <p><textarea id="createPost" rows="15" cols="60">...</textarea></p>
+        <p><textarea id="createPost" rows="1" cols="30">Enter title here...</textarea></p>
+        <p></p>
+        <button type="button">Save</button>
+    </section>
+    -->
+
+    
+
+        </html>
