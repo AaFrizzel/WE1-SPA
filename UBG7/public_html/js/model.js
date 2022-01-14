@@ -154,7 +154,7 @@ const model = (function () {
             request.execute((result) => {
                 if(result.hasOwnProperty("items")){
                     for(let blog of result.items){
-                        blogsArray.push(new Blog(blog.id, blog.name, blog.posts.items, blog.published, blog.updated, blog.url))
+                        blogsArray.push(new Blog(blog.id, blog.name, blog.posts.totalItems, blog.published, blog.updated, blog.url))
                     }
                     callback(blogsArray);
                 }else {
@@ -171,7 +171,7 @@ const model = (function () {
             });
             // Execute the API request.
             request.execute((result) => {
-                let blog = new(result.id, result.name, result.posts.items,result.published, result.updated, result.url);
+                let blog = new(result.id, result.name, result.posts.totalItems,result.published, result.updated, result.url);
                 callback(blog);
             });
         },
@@ -186,12 +186,12 @@ const model = (function () {
             request.execute((result) => {
                 if(result.hasOwnProperty("items")){
                     for (let post of result.items){
-                        postsArray.push(new Post(post.id, post.blod.id, post.title, post.published, post.updated, post.content, post.replies.totalItems));
+                        postsArray.push(new Post(post.id, post.blog.id, post.title, post.published, post.updated, post.content, post.replies.totalItems));
                     }
-                    callback(postsArray);
-                }else{
-                    callback(undefined);    
+                   
                 }
+                callback(postsArray);
+
                 
             });
         },

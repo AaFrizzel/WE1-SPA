@@ -31,15 +31,15 @@ const presenter = (function () {
             for (let b of blogs) {
                 console.log(b);
             }
-            blogId = blogs[0].id
+            blogId = blogs[0].blogId;
             model.getAllPostsOfBlog(blogId, (posts) => {
                 console.log("--------------- Alle Posts des ersten Blogs --------------- ");
-                if (!posts)
+                if (posts.length == 0)
                     return;
                 for (let p of posts) {
                     console.log(p);
                 }
-                postId = posts[1].id;
+                postId = posts[0].postID;
                 model.getAllCommentsOfPost(blogId, postId, (comments) => {
                     console.log("--------------- Alle Comments des zweiten Post --------------- ");
                     if (!comments)

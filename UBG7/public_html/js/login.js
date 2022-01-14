@@ -47,6 +47,8 @@
     }
 
     function handleAuthClick() {
+        
+        console.log("button geklickt!");
         if (GoogleAuth.isSignedIn.get()) {
             // User is authorized and has clicked 'Sign out' button.
             GoogleAuth.signOut();
