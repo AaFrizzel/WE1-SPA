@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 
+/* global model, blogoverview, allBlogs, router, allPosts, edit, detail */
+
+
 "use strict";
 const presenter = (function () {
     // Private Variablen und Funktionen
@@ -11,36 +14,48 @@ const presenter = (function () {
     let blogId = -1;
     let postId = -1;
     let owner = undefined;
+    
+    
+    function initNav(){
+       model.getAllBlogs((blogs) => {
+        let page = blogOverview.render(blogs, owner);
+        replace('navbar', page);
+       });
+    };
+    
 
     // Initialisiert die allgemeinen Teile der Seite
     function initPage() {
         console.log("Presenter: Aufruf von initPage()");
-        
-        // Hier werden zunächst nur zu Testzwecken Daten vom Model abgerufen und auf der Konsole ausgegeben 
-         
+                 
         // Nutzer abfragen und Anzeigenamen als owner setzen
         model.getSelf((result) => {
-            owner = result.displayName;
-            console.log(`Presenter: Nutzer*in ${owner} hat sich angemeldet.`);
+            owner = result;
+            console.log(`Presenter: Nutzer*in ${owner.displayName} hat sich angemeldet.`);
         });
 
-        model.getAllBlogs((blogs) => {
-            console.log("--------------- Alle Blogs --------------- ");
-            if (!blogs)
-                return;
-            for (let b of blogs) {
-                console.log(b);
-            }
+
+        initNav();
+
+        //blogoverview.render
+        //detail.render
+
+        // List all blogs for Blogoverview
+        model.getAllBlogs((blogs) => {                      
+           //let nav = document.getElementById('main-content')
+
             blogId = blogs[0].blogId;
             model.getAllPostsOfBlog(blogId, (posts) => {
                 console.log("--------------- Alle Posts des ersten Blogs --------------- ");
                 if (posts.length == 0)
                     return;
-                for (let p of posts) {
-                    console.log(p);
-                }
-                postId = posts[0].postID;
+                    postId = posts[0].postID;
                 model.getAllCommentsOfPost(blogId, postId, (comments) => {
+                    let posts = detail.render(postId, comments);    
+                    replace('main-content', posts);
+ 
+                    
+                
                     console.log("--------------- Alle Comments des zweiten Post --------------- ");
                     if (!comments)
                         return;
@@ -49,6 +64,7 @@ const presenter = (function () {
                     }
                 });
             });
+            init = true;
         });
         
         // Das muss später an geeigneter Stelle in Ihren Code hinein.
@@ -57,11 +73,17 @@ const presenter = (function () {
         if (window.location.pathname === "/")
             router.navigateToPage('/blogOverview/' + blogId);
     }
+
+
     // Sorgt dafür, dass bei einem nicht-angemeldeten Nutzer nur noch der Name der Anwendung
     // und der Login-Button angezeigt wird.
     function loginPage() {
         console.log("Presenter: Aufruf von loginPage()");
-        if(owner!== undefined) console.log(`Presenter: Nutzer*in ${owner} hat sich abgemeldet.`);
+        if(owner!== undefined){
+            console.log(`Presenter: Nutzer*in ${owner} hat sich abgemeldet.`);
+            replace('main-content', undefined);
+            replace('navbar', undefined);
+        }
         init = false;
         blogId = -1;
         postId = -1;
@@ -78,6 +100,11 @@ const presenter = (function () {
         if(element){
             main.append(element);
         }
+    }
+    function handleClicks(event){
+        //clicks auf a-tags, Elemenete und Buttons,
+        // welche in Li-tag eingebunden sind.
+        
     }
    
 

@@ -4,19 +4,64 @@
  * and open the template in the editor.
  */
 "use strict";
-const blogoverview = {
-    render(blog) {
-        blog.setFormatDates(false);
-        console.log("View: render von blogoverview");
-        let page = document.getElementById('blogoverview').cloneNode(true);
+
+
+const blogOverview = {
+    render (blogs){
+        //blogs.setFormatDates(false);
+        let page = document.getElementById('startseite').cloneNode(true);
         page.removeAttribute("id");
-        helper.setNavButtonsCurrentBlog(page);
-        helper.setDataInfo(page, blog);
+        let ul = page.querySelector("ul");
+        let liFC = ul.firstElementChild;
+        let li = liFC.cloneNode(true);
+        for(let key in blogs){
+            
+            ul.appendChild(li)
+            helper.setDataInfo(ul,blogs[key]);
+            
+        } 
         return page;
     }
 };
 
 
+const detail = {
+    render(post,comments){
+        //blog.setFormatDates(true);
+        console.log("Rendering DetailPost");
+        let page = document.getElementById('detailPost').cloneNode(true);
+        page.removeAttribute("id");
+
+        if (comments) {
+            let commentsOfPost = document.getElementById('comments').cloneNode(true);
+            commentsOfPost.removeAttribute('id');
+
+            let ul = commentsOfPost.querySelector("ul");
+            let liTempl = ul.firstElementChild;
+            liTempl.remove();
+
+            for (let comment of comments) {
+                //comment.setFormatDates(true);
+
+                let li = liTempl.cloneNode(true);
+                ul.appendChild(li);
+                helper.setDataInfo(li, comment);
+            }
+            page.appendChild(commentsOfPost);
+        }else{
+            console.log("No Comment found!");
+        }
+        helper.setDataInfo(page, post);
+        return page;
+
+
+
+
+
+    }
+};
+
+/*
 const detail = {
     render(post, comments) {
         post.setFormatDates(true);
@@ -47,6 +92,7 @@ const detail = {
         return detail;
     }
 };
+*/
 
 const helper = {
     setDataInfo(element, object) {

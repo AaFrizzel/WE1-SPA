@@ -14,14 +14,15 @@
 
         <script defer src="./js/router.js"></script>
         <script defer src="./js/view.js"></script>
-        <script>document.getElementById("time").innerHTML = document.lastModified;</script>
+        <!--script>document.getElementById("time").innerHTML = document.lastModified;</script-->
     </head>
     <body>
         <header id="header-content">
-            <nav id="navbar"></nav>
             <p id="username">%displayName</p>
+            <nav id="navbar"></nav>
+            
             <button id="sign-in-or-out-button" class ="button">Anmelden</button>
-            <button type="button">Create New Post</button>
+            
         </header>
 
         <main id="main-content"></main>
@@ -36,12 +37,12 @@
             <div id="startseite">
                 <h3>Blog Übersicht</h3>
                 <ul>
-                    <li data-path="/detail/%blodId" >
-                        <a id="blogname" data-path="/blogDetail/%blod-id">%blogName</a>
-                        <p><span>%postsAmount</span>Posts</p>
-                        <span>%Published [published]</span>
+                    <li data-path="/detail/%blogId" >
+                        <a id="blogname">%blogName</a>
+                        <p><span>%postAmount</span> Posts</p>
+                        <span>%published [published]</span>
                         <span> | </span>
-                        <span>%Updated [updated]</span>
+                        <span>%updated [updated]</span>
                     </li>
                 </ul> 
             </div>
@@ -52,12 +53,12 @@
                     <li>
                         <article>
                             <header>
-                                <h4 id="postTitle" data-path="/detail/%blodId/%postId">%postTitle</h4>
+                                <h4 id="postTitle" data-path="/detail/%blogId/%postId">%postTitle</h4>
                                 <p>%Published [published]</p> <!->Short Datum</!->
                                 <p>%Updated [updated]</p>   <!->Short Datum</!->  
                                 <p>%amountOfComments Kommentare</p>
                             </header>
-                            <img id="prePostIMG" src="%imgURL" > <!--muss nich unbedingt sein...-->
+                            <!--<img id="prePostIMG" src="%imgURL" > muss nich unbedingt sein...-->
                             <footer>
                                 <button data-oath="/detail/%blogId/%postId" type="button">Detail</button> <!--eventuell doppelt gemoppelt siehe h4-->
                                 <button data-path="/edit/%blogId/%postId" type="button">Edit</button>
@@ -72,8 +73,8 @@
                 <article>
                     <header id="postHeader">
                         <h3 id="postTitle">%postTitle</h3>
-                        <p>%Published [published]</p> <!->long Datum</!->
-                        <p>%Updated [updated]</p>   <!->long Datum</!->
+                        <p>%published [published]</p> <!->long Datum</!->
+                        <p>%updated [updated]</p>   <!->long Datum</!->
                     </header>
                     <p id="postContent"></p>
                     <!--Platzhalter für Comments, ich erzähln im dissi was ich mir da vorgestellt hab-->
@@ -87,13 +88,17 @@
 
 
             <div id="comments">
+                <ul>
+                    <li>
                 <article>
                     <header id="commentsHeader">
                         <p id="autor">%autor <span id="datum">%published [published]</span><p> <!--langesDatum-->
                             <button data-path="/detail/%blogId/%postId" type="button">Delete</button>
                     </header>
                     <p id="commentContent"></p>
-                </article>         
+                </article>  
+            </li>
+            </ul>       
             </div>    
         </div>
     </body>           
