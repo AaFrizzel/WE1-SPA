@@ -5,9 +5,15 @@
         <meta charset="utf-8">
         <title>Blogs</title>
         <meta name="description" content="blogs">
-        <link rel="stylesheet" type="text/css" href="mystyle.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"><scrip>
-        <script src="js/model.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script async defer src="https://apis.google.com/js/api.js"></script>
+
+        <script defer src= "./js/login.js" ></script>
+        <script defer src="./js/model.js"></script>
+        <script defer src="./js/presenter.js"></script>
+
+        <script defer src="./js/router.js"></script>
+        <script defer src="./js/view.js"></script>
         <script>document.getElementById("time").innerHTML = document.lastModified;</script>
     </head>
     <body>
@@ -23,9 +29,9 @@
         <footer id="footer-content">
             All Blogs are Bastards
             <p>This document was last modified <span id="time"></span>.</p>
-        </footer id="footer">
+        </footer>
 
-         <div id="hidden-templates" hidden>
+        <div id="hidden-templates" hidden>
 
             <div id="startseite">
                 <h3>Blog Übersicht</h3>
@@ -42,24 +48,24 @@
 
             <div id="allPosts">
                 <h3>Posts</h3>
-                    <ul>
-                        <li>
-                            <article>
-                                <header>
-                                    <h4 id="postTitle" data-path="/detail/%blodId/%postId">%postTitle</h4>
-                                    <p>%Published [published]</p> <!->Short Datum</!->
-                                    <p>%Updated [updated]</p>   <!->Short Datum</!->  
-                                    <p>%amountOfComments Kommentare</p>
-                                </header>
-                                <img id="prePostIMG"src="%imgURL" > <!--muss nich unbedingt sein...-->
-                                <footer>
-                                    <button data-oath="/detail/%blogId/%postId"type="button">Detail</button> <!--eventuell doppelt gemoppelt siehe h4-->
-                                    <button data-path="/edit/%blogId/%postId" type="button">Edit</button>
-                                    <button type="button">Delete</button>
-                                </footer>
-                            </article>
-                        </li>
-                    </ul>
+                <ul>
+                    <li>
+                        <article>
+                            <header>
+                                <h4 id="postTitle" data-path="/detail/%blodId/%postId">%postTitle</h4>
+                                <p>%Published [published]</p> <!->Short Datum</!->
+                                <p>%Updated [updated]</p>   <!->Short Datum</!->  
+                                <p>%amountOfComments Kommentare</p>
+                            </header>
+                            <img id="prePostIMG" src="%imgURL" > <!--muss nich unbedingt sein...-->
+                            <footer>
+                                <button data-oath="/detail/%blogId/%postId" type="button">Detail</button> <!--eventuell doppelt gemoppelt siehe h4-->
+                                <button data-path="/edit/%blogId/%postId" type="button">Edit</button>
+                                <button type="button">Delete</button>
+                            </footer>
+                        </article>
+                    </li>
+                </ul>
             </div>
 
             <div id="detailPost">
@@ -84,7 +90,7 @@
                 <article>
                     <header id="commentsHeader">
                         <p id="autor">%autor <span id="datum">%published [published]</span><p> <!--langesDatum-->
-                        <button data-path="/detail/%blogId/%postId" type="button">Delete</button>
+                            <button data-path="/detail/%blogId/%postId" type="button">Delete</button>
                     </header>
                     <p id="commentContent"></p>
                 </article>         
